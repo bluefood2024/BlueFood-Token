@@ -10,7 +10,6 @@ sui client publish
 | UpgradeCap | Capability for upgrading the package |
 | TreasuryCap | Treasury capability for minting/burning tokens |
 | CoinMetadata | Metadata for the BLUE coin |
-| DenyCapV2 | Capability for regulating coin transfers |
 | RegulatedCoinMetadata | Metadata for the regulated coin |
 
 
@@ -21,7 +20,6 @@ sui client publish
 | UpgradeCap | {{ upgrade_cap }} | {{ upgrade_cap }} | 0x652afd737a0459c8ffa33ff4dceb9ebd62f7902dd510d087e3118c4e345ac43e |
 | TreasuryCap | {{ treasury_cap }} | {{ treasury_cap }} | 0x1c2de92551dbea99d3fb9f3dd2498dab6aa9ea05228fc51023e0e6d37bfe1bbc |
 | CoinMetadata | {{ coin_metadata }} | {{ coin_metadata }} | 0x49e339b6f20ee3ab08ddc7a094816df273f25fc400cf6a6e493ccba306197d0a |
-| DenyCapV2 | {{ deny_cap }} | {{ deny_cap }} | 0x6604ec8002f14a1cfd584aa9e4870d7701e5f0299147478679225fa2343aa7ae |
 | RegulatedCoinMetadata | {{ regulated_metadata }} | {{ regulated_metadata }} | 0x908377980ef30e46056f711d596ec180c5c0eb05442ac5f20e8124a14f1fea15 |
 
 ### 指令
@@ -43,14 +41,4 @@ sui client call --package 0x2 --module coin --function update_description --type
 
 # 修改图标
 sui client call --package 0x2 --module coin --function update_icon_url --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewUrl>
-```
-
-### DenyList
-```shell
-# DenyList object (0x403)
-# 添加地址到DenyList
-sui client call --package 0x2 --module coin --function deny_list_v2_add --type-args <CoinType> --args 0x403 <DenyCapV2> <address>
-
-# 移除地址
-sui client call --package 0x2 --module coin --function deny_list_v2_remove --type-args <CoinType> --args 0x403 <DenyCapV2> <address>
 ```
