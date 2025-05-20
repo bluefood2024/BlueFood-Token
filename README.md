@@ -2,7 +2,7 @@
 ```shell
 sui client publish
 ```
-
+Contract Address: https://suiscan.xyz/mainnet/coin/0x6cbf071cadfa1d0cc611d488f70fd89248d922de2b1e4dac39ce79d516f00c9f::blue::BLUE/txs
 ### Key Objects
 | Object Type | Description |
 |------------|-------------|
